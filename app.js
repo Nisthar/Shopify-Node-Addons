@@ -1,17 +1,16 @@
 const axios = require("axios");
-const Fuse = require('fuse.js');
-const {
-  performance
-} = require('perf_hooks')
-const util = require('util')
-const Shopify = require('./build/Release/botmodules.node');
+const Fuse = require("fuse.js");
+const { performance } = require("perf_hooks");
+const util = require("util");
+const Shopify = require("./build/Release/botmodules.node");
+const { log } = require("console");
 
 async function monitorProduct(domain, keywords) {
-  let start = performance.now()
+  let start = performance.now();
   let toWatch = [];
   // Log all found items
   let found2 = await findByHandle(domain, keywords);
-  //console.log(JSON.parse(found1));
+  console.log(found2);
   if (found2 === "[]") {
     console.log("No product found!!");
   } else {
@@ -37,42 +36,51 @@ async function monitorProduct(domain, keywords) {
     }
   }
 
-
-  let end = performance.now()
+  let end = performance.now();
   let diff = end - start;
   console.log(`\x1b[35mFinished in ${diff} milliseconds\x1b[0m`);
 }
 //test1()
 let kws = [];
 kws.push("nike");
-let kw = kws.join('\t')
+let kw = kws.join("\t");
 let s1 = performance.now();
 let res = [];
 
-let getProducts = util.promisify(Shopify.getAllProducts)
+let getProducts = util.promisify(Shopify.getAllProducts);
 let findByTitle = util.promisify(Shopify.findByTitle);
 let findByHandle = util.promisify(Shopify.findByHandle);
 let outstockSizes = util.promisify(Shopify.outstockSizes);
 let instockSizes = util.promisify(Shopify.instockSizes);
 let checkRestock = util.promisify(Shopify.checkRestock);
 let getCleaned = util.promisify(Shopify.getAllClean);
-// TESTING   
+// TESTING
 let searchByTitle = util.promisify(Shopify.searchByTitle);
 let searchByHandle = util.promisify(Shopify.searchByHandle);
 let searchOutstockSizes = util.promisify(Shopify.searchOutstockSizes);
 let searchInstockSizes = util.promisify(Shopify.searchInstockSizes);
 let searchSizes = util.promisify(Shopify.searchSizes);
 
-let vr = ["19936345522249", "19936345555017", "19936345686089", "19936345718857", "19936345751625"];
+let vr = [
+  "19936345522249",
+  "19936345555017",
+  "19936345686089",
+  "19936345718857",
+  "19936345751625",
+];
 let productID = "2186230267977";
 
 async function test() {
   let kw = [];
-  kw.push("nike");
-  let domain = "undefeated.com"
-  let products = await getProducts(domain);
-  let f1 = await searchByTitle(products, kw);
-  console.log(JSON.parse(f1));
+  kw.push("undefeated");
+  let domain = "undefeated.com";
+  // let products = await getProducts(domain);
+  // console.log(products);
+  let f1 = await monitorProduct(domain, kw);
+  // console.log(f1);
+  // console.log(JSON.parse(f1));
 }
+
+test();
 
 module.exports = Shopify;

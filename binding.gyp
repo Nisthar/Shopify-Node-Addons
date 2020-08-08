@@ -1,8 +1,8 @@
 {
     "targets": [{
         "target_name": "botmodules",
-        "cflags!": [ "-fno-exceptions" ],
-        "cflags_cc!": [ "-fno-exceptions" ],
+        "cflags!": ["-fno-exceptions"],
+        "cflags_cc!": ["-fno-exceptions"],
         "sources": [
             "main.cpp",
             "cppsrc/httptest.cpp",
@@ -14,21 +14,25 @@
         'include_dirs': [
             "<!@(node -p \"require('node-addon-api').include\")",
             # Include your linked libraries as well!!!
+            "D:\\c_projects\\vcpkg\\installed\\x64-windows\\include**"
+
         ],
         'libraries': [
-          # Link libraries here.
-          # CPR
-          # RapidJSON
-          # curl
+            # Link libraries here.
+            # CPR
+            # RapidJSON
+            # curl
+
+            "D:\\c_projects\\vcpkg\\installed\\x64-windows\\lib\\**"
         ],
         'dependencies': [
             "<!(node -p \"require('node-addon-api').gyp\")",
-        ],c
+        ],
         "msbuild_settings": {
-          "Link": {
-            "ImageHasSafeExceptionHandlers": "false",
-          }
+            "Link": {
+                "ImageHasSafeExceptionHandlers": "false",
+            }
         },
-        'defines': [ 'NAPI_DISABLE_CPP_EXCEPTIONS' ]
+        'defines': ['NAPI_DISABLE_CPP_EXCEPTIONS']
     }]
 }

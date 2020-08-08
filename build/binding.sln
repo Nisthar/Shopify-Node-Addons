@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(Shopify-Node-Addons)", "..\node_projects\Shopify-Node-Addons", "{D456B32A-5C8A-06C7-3E5C-FB6AA808F7EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(node-addon-api)", "..\node_projects\Shopify-Node-Addons\node_modules\node-addon-api", "{452DC0DA-3453-E865-A37C-6DBCA4CD71D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(node_modules)", "..\node_projects\Shopify-Node-Addons\node_modules", "{5B252840-1FF2-FC6E-53BD-84A852F54BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(node_projects)", "..\node_projects", "{58BDDC82-6A83-ABCA-B645-7F827597058F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "(src)", "..\node_projects\Shopify-Node-Addons\node_modules\node-addon-api\src", "{86E56E96-418A-332E-D3E5-65011178A366}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "botmodules", "botmodules.vcxproj", "{8136BA60-A2B5-0823-66CD-7E3FF796F14A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1C7A8AC4-9045-1E5F-6447-8B1B2B848514} = {1C7A8AC4-9045-1E5F-6447-8B1B2B848514}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "nothing", "..\node_modules\node-addon-api\src\nothing.vcxproj", "{1C7A8AC4-9045-1E5F-6447-8B1B2B848514}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C7A8AC4-9045-1E5F-6447-8B1B2B848514}.Debug|x64.ActiveCfg = Debug|x64
+		{1C7A8AC4-9045-1E5F-6447-8B1B2B848514}.Debug|x64.Build.0 = Debug|x64
+		{1C7A8AC4-9045-1E5F-6447-8B1B2B848514}.Release|x64.ActiveCfg = Release|x64
+		{1C7A8AC4-9045-1E5F-6447-8B1B2B848514}.Release|x64.Build.0 = Release|x64
+		{8136BA60-A2B5-0823-66CD-7E3FF796F14A}.Debug|x64.ActiveCfg = Debug|x64
+		{8136BA60-A2B5-0823-66CD-7E3FF796F14A}.Debug|x64.Build.0 = Debug|x64
+		{8136BA60-A2B5-0823-66CD-7E3FF796F14A}.Release|x64.ActiveCfg = Release|x64
+		{8136BA60-A2B5-0823-66CD-7E3FF796F14A}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5B252840-1FF2-FC6E-53BD-84A852F54BD6} = {D456B32A-5C8A-06C7-3E5C-FB6AA808F7EA}
+		{86E56E96-418A-332E-D3E5-65011178A366} = {452DC0DA-3453-E865-A37C-6DBCA4CD71D3}
+		{452DC0DA-3453-E865-A37C-6DBCA4CD71D3} = {5B252840-1FF2-FC6E-53BD-84A852F54BD6}
+		{D456B32A-5C8A-06C7-3E5C-FB6AA808F7EA} = {58BDDC82-6A83-ABCA-B645-7F827597058F}
+		{1C7A8AC4-9045-1E5F-6447-8B1B2B848514} = {86E56E96-418A-332E-D3E5-65011178A366}
+	EndGlobalSection
+EndGlobal
